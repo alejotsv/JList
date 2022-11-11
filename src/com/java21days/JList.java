@@ -10,9 +10,17 @@ public class JList extends JFrame {
         super(title);
         setSize(dim);
         setLocationRelativeTo(null);
+        JPanel panel = new JPanel();
+        JScrollPane scrollPane = addOptionsList(panel, options);
+
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
+    }
 
+    JScrollPane addOptionsList(JPanel panel, String[] options){
+        JScrollPane scrollPane = new JScrollPane();
+        System.out.println("Creating options list");
+        return scrollPane;
     }
 }
