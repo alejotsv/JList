@@ -3,24 +3,28 @@ package com.java21days;
 import javax.swing.*;
 import java.awt.*;
 
-public class JList extends JFrame {
+public class List extends JFrame {
     Dimension dim = new Dimension(220, 300);
 
-    JList(String title, String[] options, String message){
+    List(String title, String[] options, String message){
         super(title);
         setSize(dim);
         setLocationRelativeTo(null);
+        JLabel listLabel = new JLabel(message);
         JPanel panel = new JPanel();
-        JScrollPane scrollPane = addOptionsList(panel, options);
+        panel.add(listLabel);
+        JScrollPane scrollPane = addOptionsList(options);
 
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        add(panel);
         setVisible(true);
     }
 
-    JScrollPane addOptionsList(JPanel panel, String[] options){
+    JScrollPane addOptionsList(String[] options){
         JScrollPane scrollPane = new JScrollPane();
-        System.out.println("Creating options list");
+        JList<String> optionsList = new JList<String>(options);
+
         return scrollPane;
     }
 }
